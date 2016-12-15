@@ -39,6 +39,30 @@ public class MainActivity extends AppCompatActivity {
             getSecondNumber();
             }
         });
+        mSum.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                showSum();
+            }
+        });
+        mMulti.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                showMulti();
+            }
+        });
+        mDivision.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                showDivision();
+            }
+        });
+        mDifference.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                showDifference();
+            }
+        });
     }
 
     private int getFirstNumber()
@@ -66,6 +90,7 @@ public class MainActivity extends AppCompatActivity {
     private void showMulti(){
         showResult(getFirstNumber()*getSecondNumber());
     }
+
     private void showResult(Integer message){
         Toast.makeText(MainActivity.this, message, Toast.LENGTH_LONG).show();
     }
