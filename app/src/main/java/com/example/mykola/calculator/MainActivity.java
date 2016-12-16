@@ -2,6 +2,7 @@ package com.example.mykola.calculator;
 
 import android.content.Context;
 import android.content.Intent;
+import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -60,11 +61,13 @@ public class MainActivity extends AppCompatActivity {
 
     private int getFirstNumber()
     {
+        validateFirstNumber();
         return Integer.parseInt(mFirstNumber.getText().toString().trim());
     }
 
     private int getSecondNumber()
     {
+        validateSecondNumber();
         return Integer.parseInt(mSecondNumber.getText().toString().trim());
     }
 
@@ -86,6 +89,22 @@ public class MainActivity extends AppCompatActivity {
 
     private void showResult(Integer message){
         Toast.makeText(MainActivity.this, message.toString(), Toast.LENGTH_LONG).show();
+    }
+    private int validateFirstNumber(){
+        if(mFirstNumber== null)
+        {
+            return 0;
+        }
+        else
+            return getFirstNumber();
+
+    }
+    private int validateSecondNumber(){
+        if(mSecondNumber==null){
+            return 0;
+        }
+        else
+            return getSecondNumber();
     }
 
 
