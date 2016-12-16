@@ -32,13 +32,6 @@ public class MainActivity extends AppCompatActivity {
         mDivision=(Button) findViewById(R.id.division);
         mDifference=(Button) findViewById(R.id.difference);
         mSum=(Button) findViewById(R.id.sum);
-        findViewById(R.id.calculate).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-            getFirstNumber();
-            getSecondNumber();
-            }
-        });
         mSum.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -92,7 +85,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void showResult(Integer message){
-        Toast.makeText(MainActivity.this, message, Toast.LENGTH_LONG).show();
+        Toast.makeText(MainActivity.this, message.toString(), Toast.LENGTH_LONG).show();
     }
 
 
